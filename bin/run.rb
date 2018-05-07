@@ -6,5 +6,7 @@ require_relative "../lib/command_line_interface.rb"
 
 welcome
 drink = get_drink_from_user
-get_drink_from_api(drink)
-# show_character_movies(character)
+result = get_drink_from_api(drink)
+all_drink_from_result(result)
+num = choose_number
+show_recipe(result, num)
