@@ -33,10 +33,9 @@ def show_recipe(result_hash, num)
      count +=1
    end
    puts drink_hash["strInstructions"]
-
-   # binding.pry
-
+   drink_hash
  end
+
 
 
   #  RestClient.get('http://www.swapi.co/api/people/')

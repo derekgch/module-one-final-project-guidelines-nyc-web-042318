@@ -5,8 +5,11 @@ require_relative "../lib/command_line_interface.rb"
 
 
 welcome
+user = get_user_id(get_user_name)
 drink = get_drink_from_user
 result = get_drink_from_api(drink)
 all_drink_from_result(result)
 num = choose_number
-show_recipe(result, num)
+drink_hash = show_recipe(result, num)
+binding.pry
+save_recipe(drink_hash,user)
