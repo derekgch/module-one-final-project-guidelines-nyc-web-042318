@@ -31,7 +31,7 @@ end
 def get_drink_from_api_by_id(drink_id)
   link_by_name = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{drink_id}"
   drink_hash = parse_api(link_by_name)
-  binding.pry
+  # binding.pry
 end
 
 def all_drink_from_result(result_hash)
