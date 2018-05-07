@@ -2,6 +2,23 @@ require 'rest-client'
 require 'json'
 require 'pry'
 
+def show_recipes?(user)
+  puts "Would you like to see all your recipes? y/n"
+  user_input = gets.chomp.downcase
+  if user_input == "y"
+    var = get_all_user_recipes(user)
+  else
+    puts "Goodbye"
+  end
+end
+
+def get_all_user_recipes(user)
+  user.recipes.map do |recipe|
+    response = get_drink_from_api_by_id(recipe.drinkid)
+    show_recipe(response, 1)
+  end
+end
+
 def get_drink_from_api(drink)
   #make the web request
   # drink =[]
@@ -9,6 +26,11 @@ def get_drink_from_api(drink)
   drink_page = parse_api(link_by_name)
   #we can try to break once the character is found.
   #
+end
+
+def get_drink_from_api_by_id(drink_id)
+  link_by_name = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{drink_id}"
+  drink_hash = parse_api(link_by_name)
 end
 
 def all_drink_from_result(result_hash)
