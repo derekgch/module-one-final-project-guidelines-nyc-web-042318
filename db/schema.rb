@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180507182124) do
     t.text   "info"
   end
 
-  create_table "userrecipes", force: :cascade do |t|
+  create_table "user_recipes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "recipe_id"
   end
