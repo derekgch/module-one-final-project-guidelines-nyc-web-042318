@@ -21,5 +21,5 @@ end
 
 
 def list_recipe(user)
-  puts user.recipes
+  user.recipes
 end
