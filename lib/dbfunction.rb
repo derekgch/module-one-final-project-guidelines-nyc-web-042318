@@ -18,10 +18,8 @@ def save_user(user)
 
 end
 
-def find_user(user_name)
 
-end
 
 def list_recipe(user)
-
+  puts user.recipes
 end
