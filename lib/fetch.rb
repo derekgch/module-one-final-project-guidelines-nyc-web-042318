@@ -19,15 +19,24 @@ def all_drink_from_result(result_hash)
   end
 end
 
-def choose_number
-  puts "Please pick a number"
-  user_input = gets.chomp
-  user_input.to_i
-end
+
 
 def show_recipe(result_hash, num)
    puts result_hash["drinks"][num - 1]["strDrink"]
-end
+   drink_hash=result_hash["drinks"][num - 1]
+   strIngredient = "strIngredient"
+   strMeasure ="strMeasure"
+   count =1
+   puts "Ingredient:"
+   until drink_hash[strIngredient+count.to_s] == ""
+     puts drink_hash[strMeasure+count.to_s] + drink_hash[strIngredient+count.to_s]
+     count +=1
+   end
+   puts drink_hash["strInstructions"]
+
+   # binding.pry
+
+ end
 
 
   #  RestClient.get('http://www.swapi.co/api/people/')
