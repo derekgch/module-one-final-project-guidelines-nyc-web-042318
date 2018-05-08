@@ -16,6 +16,8 @@ def get_all_user_recipes(user)
   user.recipes.map do |recipe|
     response = get_drink_from_api_by_id(recipe.drinkid)
     show_recipe(response, 1)
+    puts ""
+    puts ""
   end
 end
 

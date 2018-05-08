@@ -14,6 +14,7 @@ def get_user_id(user_name)
   if(result == nil)
     result = save_user(user_name)
   end
+  puts "We found your user name #{result.user_name}"
   result
 # binding.pry
 end
